@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     if (UniversalPlatform.isAndroid || UniversalPlatform.isWeb) {
       return const MaterialApp(
-        home: MaterialLoginScreen(),
+        home: CupertinoLoginScreen(),
         debugShowCheckedModeBanner: false,
       );
     } else if (UniversalPlatform.isIOS) {
@@ -123,9 +123,6 @@ class CupertinoLoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('Cupertino Login'),
-      ),
       child: Center(
         child: SizedBox(
           width: 300,
@@ -144,7 +141,7 @@ class CupertinoLoginScreen extends StatelessWidget {
                   'Login',
                   style: TextStyle(
                       fontFamily: 'dancingscript',
-                      fontSize: 40,
+                      fontSize: 45,
                       color: CupertinoColors.black),
                 ),
                 const SizedBox(height: 25),
@@ -153,6 +150,9 @@ class CupertinoLoginScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: CupertinoColors.systemGrey4,
                     borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  style: TextStyle(
+                    height: 1.5,
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -163,6 +163,9 @@ class CupertinoLoginScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                   obscureText: true,
+                  style: TextStyle(
+                    height: 1.5,
+                  ),
                 ),
                 const SizedBox(height: 16),
                 CupertinoButton(
