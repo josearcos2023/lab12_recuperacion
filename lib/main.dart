@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     if (UniversalPlatform.isAndroid || UniversalPlatform.isWeb) {
       return const MaterialApp(
-        home: CupertinoLoginScreen(),
+        home: MaterialLoginScreen(),
         debugShowCheckedModeBanner: false,
       );
     } else if (UniversalPlatform.isIOS) {
@@ -176,10 +176,14 @@ class CupertinoLoginScreen extends StatelessWidget {
                       vertical: 0, horizontal: 100.0),
                   child: const Text('Login'),
                 ),
+                SizedBox(
+                  height: 12,
+                ),
                 const Text(
-                  'Forgot your password',
+                  'Forgot password',
                   style: TextStyle(
                       fontSize: 12,
+                      fontFamily: 'roboto',
                       fontWeight: FontWeight.bold,
                       color: CupertinoColors.black),
                 ),
